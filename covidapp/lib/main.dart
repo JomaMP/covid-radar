@@ -7,6 +7,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       home: MyHomePage(),
     );
   }
@@ -22,10 +26,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(),
+      appBar: AppBar(
+        title: Text("Covidapp"),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
-        backgroundColor: Color(0xFF6200EE),
+        backgroundColor: Color(0xFF0277BD),
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white.withOpacity(.6),
         selectedFontSize: 14,
@@ -36,21 +44,17 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         items: [
           BottomNavigationBarItem(
-            label: 'Favorites',
-            icon: Icon(Icons.favorite),
-          ),
-          BottomNavigationBarItem(
-            label: 'Music',
-            icon: Icon(Icons.music_note),
-          ),
-          BottomNavigationBarItem(
-            label: 'Places',
+            label: 'Mapa',
             icon: Icon(Icons.location_on),
           ),
           BottomNavigationBarItem(
-            label: 'News',
-            icon: Icon(Icons.library_books),
+            label: 'Noticias',
+            icon: Icon(Icons.article),
           ),
+          BottomNavigationBarItem(
+            label: 'Contacto',
+            icon: Icon(Icons.phone),
+          )
         ],
       ),
     );
