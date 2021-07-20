@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class Registro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,11 +10,11 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 100,
+                height: 50,
               ),
               Image.asset('assets/Media - Avatar.png'),
               const SizedBox(
-                height: 50,
+                height: 20,
               ),
               Padding(
                   padding: EdgeInsets.all(40),
@@ -24,7 +24,34 @@ class HomePage extends StatelessWidget {
                         TextField(
                             keyboardType: TextInputType.text,
                             decoration: InputDecoration(
+                                labelText: "Nombre Completo",
+                                border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10.0)),
+                                ))),
+                        SizedBox(height: 35),
+                        TextField(
+                            keyboardType: TextInputType.text,
+                            decoration: InputDecoration(
                                 labelText: "Correo",
+                                border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10.0)),
+                                ))),
+                        SizedBox(height: 35),
+                        TextField(
+                            keyboardType: TextInputType.text,
+                            decoration: InputDecoration(
+                                labelText: "Telefono",
+                                border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10.0)),
+                                ))),
+                        SizedBox(height: 35),
+                        TextField(
+                            keyboardType: TextInputType.text,
+                            decoration: InputDecoration(
+                                labelText: "Fecha de nacimiento",
                                 border: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
@@ -40,32 +67,17 @@ class HomePage extends StatelessWidget {
                         SizedBox(height: 15),
                         SizedBox(height: 35),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 40),
-                          child: Container(
-                            height: 60,
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                              color: Colors.blue[700],
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.0)),
-                            ),
+                          padding: const EdgeInsets.symmetric(horizontal: 60),
+                          child: ElevatedButton(
+                            onPressed: () {},
                             child: Center(
-                              child: Text("Iniciar sesión",
+                              child: Text("Registrar",
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 22)),
                             ),
                           ),
                         ),
                         SizedBox(height: 150),
-                        Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Text("Olvidaste tu contraseña?",
-                                  style: TextStyle(color: Colors.blue[700])),
-                              Text(" Registrate",
-                                  style: TextStyle(color: Colors.blue[700])),
-                            ])
                       ])),
             ],
           ),

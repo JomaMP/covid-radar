@@ -1,4 +1,4 @@
-import 'package:covidapp/ui/home_page.dart';
+import 'package:covidapp/ui/login.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: Login(),
     );
   }
 }
