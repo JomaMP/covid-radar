@@ -1,3 +1,4 @@
+import 'package:covidapp/ui/home.dart';
 import 'package:covidapp/ui/registro.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +6,12 @@ class Login extends StatelessWidget {
   void registroPress(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (_) => Registro(),
+    ));
+  }
+
+  void loginPress(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (_) => Home(),
     ));
   }
 
@@ -49,7 +56,7 @@ class Login extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 60),
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () => loginPress(context),
                             child: Center(
                               child: Text("Iniciar sesión",
                                   style: TextStyle(

@@ -64,8 +64,7 @@ class Registro extends StatelessWidget {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                 ))),
-                        SizedBox(height: 15),
-                        SizedBox(height: 35),
+                        SizedBox(height: 50),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 60),
                           child: ElevatedButton(
