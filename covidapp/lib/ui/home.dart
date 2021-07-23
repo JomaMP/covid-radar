@@ -1,4 +1,8 @@
+import 'package:covidapp/ui/Home_pages/page_contact.dart';
+import 'package:covidapp/ui/Home_pages/page_news.dart';
 import 'package:flutter/material.dart';
+
+import 'Home_pages/page_map.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -7,12 +11,15 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _paginaActual = 0;
+
+  List<Widget> _paginas = [PageMapa(), PageContact(), PageNews()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("CovidApp"),
       ),
+      body: _paginas[_paginaActual],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           setState(() {
@@ -36,6 +43,7 @@ class _HomeState extends State<Home> {
         ],
         selectedItemColor: Colors.blue[700],
       ),
+      backgroundColor: Colors.white,
     );
   }
 }
