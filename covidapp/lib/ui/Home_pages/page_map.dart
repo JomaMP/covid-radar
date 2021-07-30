@@ -1,6 +1,13 @@
+import 'package:covidapp/ui/page_faqs.dart';
 import 'package:flutter/material.dart';
 
 class PageMapa extends StatelessWidget {
+  void faqsPress(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (_) => PageFaqs(),
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -18,9 +25,9 @@ class PageMapa extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(0),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => faqsPress(context),
                         child: Center(
-                          child: Text("Cuestionario",
+                          child: Text("Preguntas frecuentes",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 22)),
                         ),
