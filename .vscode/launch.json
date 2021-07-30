@@ -8,7 +8,10 @@
             "name": "covidapp",
             "cwd": "covidapp",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": [
+                "--no-sound-null-safety"
+            ]
         },
         {
             "name": "covidapp (profile mode)",
