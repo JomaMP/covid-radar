@@ -164,7 +164,7 @@ class EntryItem extends StatelessWidget {
       backgroundColor: Colors.blue[50],
       key: PageStorageKey<Entry>(root),
       title: Text(root.title),
-      textColor: Colors.black,
+      // textColor: Colors.black,
       children: root.children.map(_buildTiles).toList(),
     );
   }
