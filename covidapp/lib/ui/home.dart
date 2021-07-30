@@ -12,7 +12,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _paginaActual = 0;
 
-  List<Widget> _paginas = [PageMapa(), PageContact(), PageNews()];
+  List<Widget> _paginas = [PageMapa(), PageNews(), PageContact()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
