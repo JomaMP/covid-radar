@@ -1,5 +1,8 @@
 import 'package:covidapp/ui/login.dart';
+import 'package:covidapp/ui/Home_pages/page_news.dart';
 import 'package:flutter/material.dart';
+
+import 'ui/Home_pages/page_news.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
       ),
-      home: Login(),
+      home: new PageNews(),
     );
   }
 }
