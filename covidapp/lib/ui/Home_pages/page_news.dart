@@ -29,53 +29,50 @@ class _PageNewsState extends State<PageNews> {
                 itemBuilder: (context, index) {
                   if (snapshot.hasData) {
                     var article = snapshot.data.articles[index];
-                    if (article.urlToImage != null) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: 120,
-                          child: Row(
-                            children: <Widget>[
-                              Row(
-                                children: [
-                                  Card(
-                                    clipBehavior: Clip.antiAlias,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(24)),
-                                    child: AspectRatio(
-                                      aspectRatio: 1,
-                                      child: Image.network(
-                                        article.urlToImage,
-                                        fit: BoxFit.cover,
-                                      ),
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 120,
+                        child: Row(
+                          children: <Widget>[
+                            Row(
+                              children: [
+                                Card(
+                                  clipBehavior: Clip.antiAlias,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(24)),
+                                  child: AspectRatio(
+                                    aspectRatio: 1,
+                                    child: Image.network(
+                                      article.urlToImage,
+                                      fit: BoxFit.cover,
                                     ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Flexible(
+                              child: Column(
+                                children: <Widget>[
+                                  Text(
+                                    article.title,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    article.description,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
                                 ],
                               ),
-                              Flexible(
-                                child: Column(
-                                  children: <Widget>[
-                                    Text(
-                                      article.title,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Text(
-                                      article.content,
-                                      maxLines: 3,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      );
-                    }
+                      ),
+                    );
                   } else
                     return Center(child: CircularProgressIndicator());
                 });
