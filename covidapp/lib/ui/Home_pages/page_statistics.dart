@@ -1,5 +1,6 @@
 import 'package:covidapp/ui/Home_pages/Statistics_pages/page_hospital_statistics.dart';
 import 'package:covidapp/ui/Home_pages/Statistics_pages/page_mexico_statistics.dart';
+import 'package:covidapp/ui/Home_pages/page_faqs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:async';
@@ -20,6 +21,12 @@ class PageStatistics extends StatefulWidget {
 
 class _PageStatistics extends State<PageStatistics> {
   final String url = "https://corona.lmao.ninja/v3/covid-19/all";
+
+  void faqsPress(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (_) => PageFaqs(),
+    ));
+  }
 
   navigateToWHO(url) async {
     if (await canLaunch(url)) {
@@ -85,44 +92,42 @@ class _PageStatistics extends State<PageStatistics> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Padding(padding: EdgeInsets.only(top: 20)),
-          Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'Quedate',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25.0,
-                      fontWeight: FontWeight.bold),
-                ),
-                Card(
-                  child: Text('EnCasa',
+          Card(
+              child: Container(
+                  child: Center(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(40),
+                  child: ElevatedButton(
+                    onPressed: () => faqsPress(context),
+                    child: Text(
+                      "Preguntas frecuentes",
                       style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.bold)),
-                  color: Color(0xFFfe9900),
-                )
-              ],
-            ),
-          ),
-          Padding(padding: EdgeInsets.only(top: 40.0)),
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              ])))),
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Text('Estadísticas del mundo',
-                    style: TextStyle(color: Colors.white, fontSize: 16)),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold)),
                 Padding(padding: EdgeInsets.only(top: 10.0)),
                 // ignore: deprecated_member_use
-                OutlineButton(
-                  color: Colors.blueAccent,
-                  borderSide: BorderSide(color: Color(0xFFfe9900)),
+                ElevatedButton(
                   onPressed: () => navigateToIndia(),
                   child: Text('Estadísticas de México',
                       style: TextStyle(
-                          color: Color(0xFFfe9900),
+                          color: Colors.white,
                           fontSize: 16,
                           fontWeight: FontWeight.bold)),
                 )
@@ -134,59 +139,57 @@ class _PageStatistics extends State<PageStatistics> {
                   final covid = SnapShot.data;
                   return Column(children: <Widget>[
                     Card(
-                        color: Color(0xFF292929),
                         child: ListTile(
                             title: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: <Widget>[
-                              Text(
-                                "${covid!.cases} ",
-                                style: TextStyle(
-                                    color: Colors.blue,
-                                    fontSize: 23,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                "${covid.deaths}",
-                                style: TextStyle(
-                                    color: Colors.red,
-                                    fontSize: 23,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Text("${covid.recovered}",
-                                  style: TextStyle(
-                                      color: Colors.green,
-                                      fontSize: 23,
-                                      fontWeight: FontWeight.bold)),
-                            ]))),
+                          Text(
+                            "${covid!.cases} ",
+                            style: TextStyle(
+                                color: Colors.blue,
+                                fontSize: 23,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "${covid.deaths}",
+                            style: TextStyle(
+                                color: Colors.red,
+                                fontSize: 23,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text("${covid.recovered}",
+                              style: TextStyle(
+                                  color: Colors.green,
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.bold)),
+                        ]))),
                     Card(
-                        color: Color(0xFF292929),
                         child: ListTile(
                             title: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                    MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
-                              Text(
-                                "Casos totales ",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                "Deaths",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Text("Recoveries",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold)),
-                            ]))),
+                          Text(
+                            "Casos totales ",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Deaths",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text("Recoveries",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold)),
+                        ]))),
                   ]);
                 } else if (SnapShot.hasError) {
                   return Text(SnapShot.error.toString());
@@ -194,166 +197,132 @@ class _PageStatistics extends State<PageStatistics> {
 
                 return CircularProgressIndicator();
               }),
-          Padding(padding: EdgeInsets.only(top: 20.0)),
-          Container(
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                Card(
-                    child: Container(
-                        color: Color(0xFF292929),
-                        child: Center(
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                              Padding(padding: EdgeInsets.only(top: 20.0)),
-                              Image(
-                                image: AssetImage(
-                                    "assets/statistics_images/india.png"),
-                                height: 90,
-                                width: 90,
-                              ),
-                              Padding(padding: EdgeInsets.all(10)),
-                              // ignore: deprecated_member_use
-                              OutlineButton(
-                                borderSide:
-                                    BorderSide(color: Color(0xFFfe9900)),
-                                onPressed: () => navigateToIndiaMap(),
-                                child: Text(
-                                  "Estadisticas estatales",
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: Color(0xFFfe9900),
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ])))),
-                Card(
-                    child: Container(
-                        color: Color(0xFF292929),
-                        child: Center(
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                              Padding(padding: EdgeInsets.only(top: 20.0)),
-                              Image(
-                                image: AssetImage(
-                                    "assets/statistics_images/world.png"),
-                                height: 95,
-                                width: 95,
-                              ),
-                              Padding(padding: EdgeInsets.all(10)),
-                              // ignore: deprecated_member_use
-                              OutlineButton(
-                                borderSide:
-                                    BorderSide(color: Color(0xFFfe9900)),
-                                onPressed: () => navigateToWorld(),
-                                child: Text(
-                                  "Estadísticas por países",
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: Color(0xFFfe9900),
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ])))),
-              ])),
-          Padding(padding: EdgeInsets.only(top: 20.0)),
-          Container(
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                Card(
-                    child: Container(
-                        color: Color(0xFF292929),
-                        child: Center(
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                              Padding(padding: EdgeInsets.only(top: 20.0)),
-                              Image(
-                                image: AssetImage(
-                                    "assets/statistics_images/hospital.png"),
-                                height: 100,
-                                width: 100,
-                              ),
-                              Padding(padding: EdgeInsets.all(10)),
-                              OutlineButton(
-                                borderSide:
-                                    BorderSide(color: Color(0xFFfe9900)),
-                                onPressed: () => navigateToHospital(),
-                                child: Text(
-                                  "Estadísticas de hospitales",
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: Color(0xFFfe9900),
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ])))),
-                Card(
-                    child: Container(
-                        color: Color(0xFF292929),
-                        child: Center(
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                              Padding(padding: EdgeInsets.only(top: 20.0)),
-                              Image(
-                                image: AssetImage(
-                                    "assets/statistics_images/hs.png"),
-                                height: 120,
-                                width: 120,
-                              ),
-                              Padding(padding: EdgeInsets.all(10)),
-                              OutlineButton(
-                                borderSide:
-                                    BorderSide(color: Color(0xFFfe9900)),
-                                onPressed: () => navigateToHstate(),
-                                child: Text(
-                                  "Estadísticas de Hospitales \npor Estado",
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: Color(0xFFfe9900),
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ])))),
-              ])),
-          Padding(padding: EdgeInsets.only(top: 20.0)),
-          Card(
-              child: Container(
-                  color: Color(0xFF292929),
-                  child: Center(
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: <Widget>[
-                        Padding(padding: EdgeInsets.only(top: 20.0)),
-                        Image(
-                          image:
-                              AssetImage("assets/statistics_images/myth.png"),
-                          height: 100,
-                          width: 100,
-                        ),
-                        Padding(padding: EdgeInsets.all(10)),
-                        OutlineButton(
-                          borderSide: BorderSide(color: Color(0xFFfe9900)),
-                          onPressed: () => navigateToWHO(
-                              "https://www.who.int/news-room/q-a-detail/q-a-coronaviruses"),
-                          child: Text(
-                            "Preguntas frecuentes OMS",
-                            style: TextStyle(
-                                fontSize: 15,
-                                color: Color(0xFFfe9900),
-                                fontWeight: FontWeight.bold),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: Container(
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Card(
+                        child: Container(
+                            child: Center(
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: <Widget>[
+                          Padding(padding: EdgeInsets.only(top: 20.0)),
+                          Image(
+                            image: AssetImage(
+                                "assets/statistics_images/india.png"),
+                            height: 80,
+                            width: 80,
                           ),
+                          Padding(padding: EdgeInsets.all(10)),
+                          // ignore: deprecated_member_use
+                          ElevatedButton(
+                            onPressed: () => navigateToIndiaMap(),
+                            child: Text(
+                              "Estadisticas estatales",
+                              style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ])))),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(30),
+                    child: Card(
+                        child: Container(
+                            child: Center(
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: <Widget>[
+                          Padding(padding: EdgeInsets.only(top: 20.0)),
+                          Image(
+                            image: AssetImage(
+                                "assets/statistics_images/world.png"),
+                            height: 80,
+                            width: 80,
+                          ),
+                          Padding(padding: EdgeInsets.all(10)),
+                          ElevatedButton(
+                            onPressed: () => navigateToWorld(),
+                            child: Text(
+                              "Estadísticas por países",
+                              style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ])))),
+                  ),
+                ])),
+          ),
+          Padding(padding: EdgeInsets.only(top: 20.0)),
+          Container(
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                Card(
+                    child: Container(
+                        child: Center(
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                      Padding(padding: EdgeInsets.only(top: 20.0)),
+                      Image(
+                        image:
+                            AssetImage("assets/statistics_images/hospital.png"),
+                        height: 80,
+                        width: 80,
+                        fit: BoxFit.cover,
+                      ),
+                      ElevatedButton(
+                        onPressed: () => navigateToHospital(),
+                        child: Text(
+                          "Estadísticas de hospitales",
+                          style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
                         ),
-                      ])))),
+                      ),
+                    ])))),
+                Card(
+                    child: Container(
+                        child: Center(
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                      Padding(padding: EdgeInsets.only(top: 20.0)),
+                      Image(
+                        image: AssetImage("assets/statistics_images/hs.png"),
+                        height: 80,
+                        width: 80,
+                        fit: BoxFit.cover,
+                      ),
+                      ElevatedButton(
+                        onPressed: () => navigateToHstate(),
+                        child: Text(
+                          "Estadísticas de Hospitales \npor Estado",
+                          style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ])))),
+              ])),
         ],
       )),
     )));

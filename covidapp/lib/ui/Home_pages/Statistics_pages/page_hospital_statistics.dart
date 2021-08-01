@@ -41,9 +41,8 @@ class _HospitalState extends State<Hospital> {
     return Scaffold(
         appBar: AppBar(
           title: Text('México Estadísticas de Hospitales'),
-          backgroundColor: Color(0xFF00A86B),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
             child: Container(
                 child: Center(
@@ -58,7 +57,7 @@ class _HospitalState extends State<Hospital> {
                 ),
                 Padding(padding: EdgeInsets.only(top: 20.0)),
                 Card(
-                    color: Color(0xFF292929),
+                    color: Colors.white,
                     child: ListTile(
                         title: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -66,18 +65,18 @@ class _HospitalState extends State<Hospital> {
                           Text(
                             "Total Hospitales",
                             style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
                             "Total camas",
                             style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
-                          // Text("Recoveries",style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+                          // Text("Recoveries",style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
                         ]))),
                 FutureBuilder<Hbeds>(
                     future: getJsonData(),
@@ -86,7 +85,7 @@ class _HospitalState extends State<Hospital> {
                         final covid = SnapShot.data;
                         return Column(children: <Widget>[
                           Card(
-                              color: Color(0xFF292929),
+                              color: Colors.white,
                               child: ListTile(
                                   title: Row(
                                       mainAxisAlignment:
@@ -110,7 +109,7 @@ class _HospitalState extends State<Hospital> {
                                   ]))),
                           Padding(padding: EdgeInsets.only(top: 10.0)),
                           Card(
-                              color: Color(0xFF292929),
+                              color: Colors.white,
                               child: ListTile(
                                   title: Row(
                                       mainAxisAlignment:
@@ -119,21 +118,21 @@ class _HospitalState extends State<Hospital> {
                                     Text(
                                       "Hospitales Urbanos",
                                       style: TextStyle(
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
                                       "Total camas",
                                       style: TextStyle(
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     //Text("${covid.discharged}",style: TextStyle(color: Colors.green, fontSize: 30, fontWeight: FontWeight.bold)),
                                   ]))),
                           Card(
-                              color: Color(0xFF292929),
+                              color: Colors.white,
                               child: ListTile(
                                   title: Row(
                                       mainAxisAlignment:
@@ -157,7 +156,7 @@ class _HospitalState extends State<Hospital> {
                                   ]))),
                           Padding(padding: EdgeInsets.only(top: 10.0)),
                           Card(
-                              color: Color(0xFF292929),
+                              color: Colors.white,
                               child: ListTile(
                                   title: Row(
                                       mainAxisAlignment:
@@ -166,21 +165,21 @@ class _HospitalState extends State<Hospital> {
                                     Text(
                                       "Hospitales Rurales",
                                       style: TextStyle(
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
                                       "Total camas",
                                       style: TextStyle(
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    // Text("Recoveries",style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+                                    // Text("Recoveries",style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
                                   ]))),
                           Card(
-                              color: Color(0xFF292929),
+                              color: Colors.white,
                               child: ListTile(
                                   title: Row(
                                       mainAxisAlignment:

@@ -38,9 +38,8 @@ class _TindiaState extends State<Tindia> {
     return Scaffold(
         appBar: AppBar(
           title: Text('México COVID-19 estadísticas'),
-          backgroundColor: Color(0xFF00A86B),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         body: Container(
             child: Center(
           child: Column(
@@ -48,31 +47,30 @@ class _TindiaState extends State<Tindia> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Card(
-                    color: Color(0xFF292929),
                     child: ListTile(
                         title: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                          Text(
-                            "Casos totales",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "Muertes",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text("Recuperados",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold)),
-                        ]))),
+                      Text(
+                        "Casos totales",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Muertes",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text("Recuperados",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold)),
+                    ]))),
                 Padding(padding: EdgeInsets.all(10.0)),
                 FutureBuilder<Ticases>(
                     future: getJsonData(),
@@ -81,7 +79,7 @@ class _TindiaState extends State<Tindia> {
                         final covid = SnapShot.data;
                         return Column(children: <Widget>[
                           Card(
-                              color: Color(0xFF292929),
+                              color: Colors.white,
                               child: ListTile(
                                   title: Row(
                                       mainAxisAlignment:
@@ -91,20 +89,20 @@ class _TindiaState extends State<Tindia> {
                                       "${covid!.total} ",
                                       style: TextStyle(
                                           color: Colors.blue,
-                                          fontSize: 30,
+                                          fontSize: 25,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
                                       "${covid.deaths}",
                                       style: TextStyle(
                                           color: Colors.red,
-                                          fontSize: 30,
+                                          fontSize: 25,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text("${covid.discharged}",
                                         style: TextStyle(
                                             color: Colors.green,
-                                            fontSize: 30,
+                                            fontSize: 25,
                                             fontWeight: FontWeight.bold)),
                                   ])))
                         ]);

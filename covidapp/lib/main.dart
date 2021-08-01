@@ -1,3 +1,4 @@
+import 'package:covidapp/ui/home.dart';
 import 'package:covidapp/ui/login.dart';
 import 'package:flutter/material.dart';
 

@@ -50,7 +50,7 @@ class _WorldState extends State<World> {
                                       Text(
                                         snapshot.data[index]['country'],
                                         style: TextStyle(
-                                            fontSize: 18, color: Colors.white),
+                                            fontSize: 18, color: Colors.black),
                                       ),
                                     ]),
                               )),
@@ -67,14 +67,14 @@ class _WorldState extends State<World> {
         context: context,
         builder: (BuildContext contect) {
           return AlertDialog(
-            backgroundColor: Color(0xFF363636),
+            backgroundColor: Colors.white,
             shape: RoundedRectangleBorder(),
             content: SingleChildScrollView(
               child: ListBody(
                 children: <Widget>[
                   Text(
                     "Casos totales: $ind",
-                    style: TextStyle(fontSize: 25, color: Colors.white),
+                    style: TextStyle(fontSize: 25, color: Colors.black),
                   ),
                   Text(
                     "Muertes en el día: $inter",
@@ -113,9 +113,9 @@ class _WorldState extends State<World> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('Estadísticas por países'),
-            backgroundColor: Color(0xFF152238)),
-        backgroundColor: Colors.black,
+          title: Text('Estadísticas por países'),
+        ),
+        backgroundColor: Colors.white,
         body: RefreshIndicator(
           child: Container(
               padding: EdgeInsets.all(10),
@@ -148,7 +148,7 @@ class _WorldState extends State<World> {
                                               .toString()),
                                       child: Card(
                                         child: Container(
-                                            color: Color(0xFF292929),
+                                            color: Colors.white,
                                             child: Center(
                                               child: Column(
                                                   mainAxisAlignment:
@@ -186,7 +186,7 @@ class _WorldState extends State<World> {
                                                           ['country'],
                                                       style: TextStyle(
                                                           fontSize: 18,
-                                                          color: Colors.white),
+                                                          color: Colors.black),
                                                     ),
                                                   ]),
                                             )),

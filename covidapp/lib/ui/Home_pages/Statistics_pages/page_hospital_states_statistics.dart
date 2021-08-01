@@ -35,27 +35,27 @@ class _HstateState extends State<Hstate> {
                 children: <Widget>[
                   Text(
                     "Total Hospitales: $ind",
-                    style: TextStyle(fontSize: 25, color: Colors.white),
+                    style: TextStyle(fontSize: 25, color: Colors.black),
                   ),
                   Text(
                     "Camas: $inter",
-                    style: TextStyle(fontSize: 25, color: Colors.white),
+                    style: TextStyle(fontSize: 25, color: Colors.black),
                   ),
                   Text(
                     "Total Hospitales en Area Urbana: $recover",
-                    style: TextStyle(fontSize: 25, color: Colors.white),
+                    style: TextStyle(fontSize: 25, color: Colors.black),
                   ),
                   Text(
                     "Camas: $death",
-                    style: TextStyle(fontSize: 25, color: Colors.white),
+                    style: TextStyle(fontSize: 25, color: Colors.black),
                   ),
                   Text(
                     "Total Hospitales Area Rural: $hospital",
-                    style: TextStyle(fontSize: 25, color: Colors.white),
+                    style: TextStyle(fontSize: 25, color: Colors.black),
                   ),
                   Text(
                     "Camas: $beds",
-                    style: TextStyle(fontSize: 25, color: Colors.white),
+                    style: TextStyle(fontSize: 25, color: Colors.black),
                   ),
                 ],
               ),
@@ -68,9 +68,9 @@ class _HstateState extends State<Hstate> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text('Estadísticas de hospitales por Estado'),
-            backgroundColor: Color(0xFF152238)),
-        backgroundColor: Colors.black,
+          title: Text('Estadísticas de hospitales por Estado'),
+        ),
+        backgroundColor: Colors.white,
         body: Container(
           padding: EdgeInsets.all(10),
           child: FutureBuilder(
@@ -104,7 +104,7 @@ class _HstateState extends State<Hstate> {
                                 // child: Padding(padding: EdgeInsets.symmetric(vertical: 10,horizontal: 8),
 
                                 child: Container(
-                                    color: Color(0xFF292929),
+                                    color: Colors.white,
                                     child: Center(
                                       child: Column(
                                           mainAxisAlignment:
@@ -118,7 +118,7 @@ class _HstateState extends State<Hstate> {
                                             Text(
                                               'Total de camas: ${snapshot.data[index]['totalBeds'].toString()}',
                                               style: TextStyle(
-                                                  color: Color(0xFF45b6fe),
+                                                  color: Colors.blue,
                                                   fontWeight: FontWeight.bold),
                                             ),
                                             Padding(
@@ -137,7 +137,7 @@ class _HstateState extends State<Hstate> {
                                               snapshot.data[index]['state'],
                                               style: TextStyle(
                                                   fontSize: 18,
-                                                  color: Colors.white),
+                                                  color: Colors.black),
                                             ),
                                           ]),
                                     )),
