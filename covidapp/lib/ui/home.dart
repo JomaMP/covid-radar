@@ -1,5 +1,6 @@
 import 'package:covidapp/ui/Home_pages/page_contact.dart';
 import 'package:covidapp/ui/Home_pages/page_news.dart';
+import 'package:covidapp/ui/Home_pages/page_statistics.dart';
 import 'package:flutter/material.dart';
 
 import 'Home_pages/page_map.dart';
@@ -12,7 +13,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _paginaActual = 0;
 
-  List<Widget> _paginas = [PageMapa(), PageNews(), PageContact()];
+  List<Widget> _paginas = [PageStatistics(), PageNews(), PageContact()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +31,7 @@ class _HomeState extends State<Home> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.map),
-            label: 'Mapa',
+            label: 'Estadísticas',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.article),

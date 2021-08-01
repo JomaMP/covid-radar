@@ -1,4 +1,4 @@
-import 'package:covidapp/ui/page_faqs.dart';
+import 'package:covidapp/ui/Home_pages/page_faqs.dart';
 import 'package:flutter/material.dart';
 
 class PageMapa extends StatelessWidget {
