@@ -127,7 +127,7 @@ class _HstateState extends State<Hstate> {
                                                     EdgeInsets.only(top: 5.0)),
                                             Image(
                                               image: AssetImage(
-                                                  "statistics_images/heart.png"),
+                                                  "assets/statistics_images/heart.png"),
                                               height: 100,
                                               width: 100,
                                             ),

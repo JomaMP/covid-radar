@@ -1,9 +1,8 @@
 import 'package:covidapp/ui/Home_pages/page_contact.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:covidapp/ui/Home_pages/page_news.dart';
 import 'package:covidapp/ui/Home_pages/page_statistics.dart';
 import 'package:flutter/material.dart';
-
-import 'Home_pages/page_map.dart';
 
 class Home extends StatefulWidget {
   @override

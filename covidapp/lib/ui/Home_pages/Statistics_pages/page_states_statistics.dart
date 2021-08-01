@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:dio/dio.dart';
 
 class India extends StatefulWidget {
@@ -49,7 +50,7 @@ class _IndiaState extends State<India> {
                                         children: <Widget>[
                                           Image(
                                             image: AssetImage(
-                                                "statistics_images/cases.png"),
+                                                "assets/statistics_images/cases.png"),
                                             height: 100,
                                             width: 100,
                                           ),
@@ -187,7 +188,7 @@ class _IndiaState extends State<India> {
                                                                 top: 5.0)),
                                                     Image(
                                                       image: AssetImage(
-                                                          "statistics_images/cases.png"),
+                                                          "assets/statistics_images/cases.png"),
                                                       height: 100,
                                                       width: 100,
                                                     ),

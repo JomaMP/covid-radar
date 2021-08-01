@@ -1,6 +1,7 @@
 import 'package:covidapp/ui/login.dart';
 import 'package:flutter/material.dart';
 
+// @dart=2.9
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

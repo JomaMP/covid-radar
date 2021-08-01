@@ -44,7 +44,7 @@ class _WorldState extends State<World> {
                                         children: <Widget>[
                                           Image(
                                             image: AssetImage(
-                                                "statistics_images/wdeath.png"),
+                                                "assets/statistics_images/wdeath.png"),
                                             height: 85,
                                             width: 85,
                                           ),
@@ -177,7 +177,7 @@ class _WorldState extends State<World> {
 
                                                     Image(
                                                       image: AssetImage(
-                                                          "statistics_images/wdeath.png"),
+                                                          "assets/statistics_images/wdeath.png"),
                                                       height: 85,
                                                       width: 85,
                                                     ),

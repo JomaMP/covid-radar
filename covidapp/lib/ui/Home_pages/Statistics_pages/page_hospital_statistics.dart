@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:http/http.dart' as http;
 import 'Hbeds.dart';
 import 'dart:convert';
@@ -51,7 +52,7 @@ class _HospitalState extends State<Hospital> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Image(
-                  image: AssetImage("images/h2.png"),
+                  image: AssetImage("assets/statistics_images/h2.png"),
                   height: 300,
                   width: 300,
                 ),
@@ -92,7 +93,7 @@ class _HospitalState extends State<Hospital> {
                                           MainAxisAlignment.spaceEvenly,
                                       children: <Widget>[
                                     Text(
-                                      "   ${covid!.totalHospitals} ",
+                                      "   ${covid.totalHospitals} ",
                                       style: TextStyle(
                                           color: Colors.blue,
                                           fontSize: 30,
