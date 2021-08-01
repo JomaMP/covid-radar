@@ -93,7 +93,7 @@ class _HospitalState extends State<Hospital> {
                                           MainAxisAlignment.spaceEvenly,
                                       children: <Widget>[
                                     Text(
-                                      "   ${covid.totalHospitals} ",
+                                      "   ${covid!.totalHospitals} ",
                                       style: TextStyle(
                                           color: Colors.blue,
                                           fontSize: 30,
