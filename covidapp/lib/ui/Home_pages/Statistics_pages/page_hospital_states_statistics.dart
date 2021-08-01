@@ -29,7 +29,6 @@ class _HstateState extends State<Hstate> {
         context: context,
         builder: (BuildContext contect) {
           return AlertDialog(
-            backgroundColor: Color(0xFF363636),
             shape: RoundedRectangleBorder(),
             content: SingleChildScrollView(
               child: ListBody(
