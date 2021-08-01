@@ -1,6 +1,6 @@
 # Covid Radar App
 ---
-Autores:
+Autores: \n
 Torres Aguilar Isaac
 Lopez Romo José Uriel
 Guiterrez Martínez Alexis
