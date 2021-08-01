@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:covidapp/ui/home.dart';
 import 'package:covidapp/ui/registro.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +10,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
   TextEditingController user = TextEditingController();
   TextEditingController pass = TextEditingController();
 
@@ -21,24 +19,19 @@ class _LoginState extends State<Login> {
       "email": user.text,
       "contrasena": pass.text,
     });
-    debugPrint("Aqui sigo vivo " + user.text + " " +  pass.text);
+    debugPrint("Aqui sigo vivo " + user.text + " " + pass.text);
     debugPrint(response.body);
     var data = json.decode(response.body);
     debugPrint("Me muero aqui 0");
     if (data == "Success") {
-      FlutterToast(context).showToast(
-          child: Text(
-        'Login Successful',
-        style: TextStyle(fontSize: 25, color: Colors.green),
-      ));
       debugPrint("Me muero aqui 1");
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>Home(),),);
-    } else {
-      FlutterToast(context).showToast(
-        child: Text('Username and password invalid',
-        style: TextStyle(fontSize: 25, color: Colors.red)));
-        debugPrint("Me muero aqui 2");
-    }   
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Home(),
+        ),
+      );
+    } else {}
   }
 
   void registroPress(BuildContext context) {
@@ -74,31 +67,30 @@ class _LoginState extends State<Login> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Username',
-                    prefixIcon: Icon(Icons.person),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8)),
-                  ),
-                  controller: user
-                ),
+                            decoration: InputDecoration(
+                              labelText: 'Username',
+                              prefixIcon: Icon(Icons.person),
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(8)),
+                            ),
+                            controller: user),
                         SizedBox(height: 35),
                         TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    prefixIcon: Icon(Icons.lock),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8)),
-                  ),
-                  controller: pass
-                ),
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                              prefixIcon: Icon(Icons.lock),
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(8)),
+                            ),
+                            controller: pass),
                         SizedBox(height: 15),
                         SizedBox(height: 35),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 60),
                           child: ElevatedButton(
-                            onPressed: () => login(),  //Ejecutara el metodo login
+                            onPressed: () =>
+                                login(), //Ejecutara el metodo login
                             child: Center(
                               child: Text("Iniciar sesión",
                                   style: TextStyle(

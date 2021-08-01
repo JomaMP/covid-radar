@@ -109,21 +109,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
-  fluttertoast:
-    dependency: "direct main"
-    description:
-      name: fluttertoast
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "6.0.1"
-=======
   flutter_web_plugins:
     dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.0"
->>>>>>> 8574854129a5f59f897348d75be80493e9fb621b
   http:
     dependency: "direct main"
     description:
@@ -313,8 +303,4 @@ packages:
     version: "2.2.1"
 sdks:
   dart: ">=2.12.0 <3.0.0"
-<<<<<<< HEAD
-  flutter: ">=1.10.0"
-=======
   flutter: ">=1.22.0"
->>>>>>> 8574854129a5f59f897348d75be80493e9fb621b

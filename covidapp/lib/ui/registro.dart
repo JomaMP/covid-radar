@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:covidapp/ui/login.dart';
@@ -10,12 +9,11 @@ class Registro extends StatefulWidget {
 }
 
 class _RegistroState extends State<Registro> {
-
   TextEditingController user = TextEditingController();
   TextEditingController celphone = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController pass = TextEditingController();
-  
+
   Future register() async {
     var url = "http://192.168.100.105/pruebas/registro.php";
     var response = await http.post(url, body: {
@@ -25,20 +23,23 @@ class _RegistroState extends State<Registro> {
       "contrasena": pass.text,
     });
 
-    debugPrint(user.text + "  " + celphone.text + "  " + email.text + "  " + pass.text);
+    debugPrint(user.text +
+        "  " +
+        celphone.text +
+        "  " +
+        email.text +
+        "  " +
+        pass.text);
     debugPrint(response.body);
     var data = json.decode(response.body);
     if (data == "Error") {
-      FlutterToast(context).showToast(
-          child: Text(
-        'User allready exit!',
-        style: TextStyle(fontSize: 25, color: Colors.red),
-      ));
     } else {
-      FlutterToast(context).showToast(
-          child: Text('Registration Successful',
-              style: TextStyle(fontSize: 25, color: Colors.green)));
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Login(),),);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Login(),
+        ),
+      );
     }
   }
 
@@ -70,8 +71,7 @@ class _RegistroState extends State<Registro> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                 )),
-                                controller: user
-                        ),
+                            controller: user),
                         SizedBox(height: 35),
                         TextField(
                             keyboardType: TextInputType.text,
@@ -81,8 +81,7 @@ class _RegistroState extends State<Registro> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                 )),
-                                controller: email
-                        ),
+                            controller: email),
                         SizedBox(height: 35),
                         TextField(
                             keyboardType: TextInputType.text,
@@ -92,8 +91,7 @@ class _RegistroState extends State<Registro> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                 )),
-                                controller: celphone
-                        ),
+                            controller: celphone),
                         SizedBox(height: 35),
                         /*TextField(
                             keyboardType: TextInputType.text,
@@ -111,13 +109,14 @@ class _RegistroState extends State<Registro> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10.0)),
                                 )),
-                                controller: pass
-                        ),
+                            controller: pass),
                         SizedBox(height: 50),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 60),
                           child: ElevatedButton(
-                          onPressed: () { register(); },
+                            onPressed: () {
+                              register();
+                            },
                             child: Center(
                               child: Text("Registrar",
                                   style: TextStyle(
