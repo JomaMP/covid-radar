@@ -12,14 +12,12 @@ class API_Manager {
     try {
       var response = await client.get(
           'https://newsapi.org/v2/top-headlines?country=mx&q=covid&apiKey=ee9a8608664e4fdfb89214b897de7553');
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 && response.body != null) {
         var jsonString = response.body;
         var jsonMap = json.decode(jsonString);
         newsModel = NewModel.fromJson(jsonMap);
+        return newsModel;
       }
-    } catch (Exception) {
-      return newsModel;
-    }
-    return newsModel;
+    } catch (Exception) {}
   }
 }

@@ -1,10 +1,7 @@
-import 'package:covidapp/ui/home.dart';
 import 'package:covidapp/ui/login.dart';
-import 'package:covidapp/ui/Home_pages/page_news.dart';
 import 'package:flutter/material.dart';
 
-import 'ui/Home_pages/page_news.dart';
-
+// @dart=2.9
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
