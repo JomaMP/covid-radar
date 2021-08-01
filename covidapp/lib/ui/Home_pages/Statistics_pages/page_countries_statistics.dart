@@ -34,29 +34,26 @@ class _WorldState extends State<World> {
                                 snapshot.data[index]['deaths'].toString()),
                             child: Card(
                               child: Container(
-                                  color: Color(0xFF292929),
                                   child: Center(
-                                    child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: <Widget>[
-                                          Image(
-                                            image: AssetImage(
-                                                "assets/statistics_images/wdeath.png"),
-                                            height: 85,
-                                            width: 85,
-                                          ),
-                                          Padding(padding: EdgeInsets.all(10)),
-                                          Text(
-                                            snapshot.data[index]['country'],
-                                            style: TextStyle(
-                                                fontSize: 18,
-                                                color: Colors.white),
-                                          ),
-                                        ]),
-                                  )),
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      Image(
+                                        image: AssetImage(
+                                            "assets/statistics_images/wdeath.png"),
+                                        height: 85,
+                                        width: 85,
+                                      ),
+                                      Padding(padding: EdgeInsets.all(10)),
+                                      Text(
+                                        snapshot.data[index]['country'],
+                                        style: TextStyle(
+                                            fontSize: 18, color: Colors.white),
+                                      ),
+                                    ]),
+                              )),
                             ))));
               }
               return Center(

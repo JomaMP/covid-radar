@@ -141,7 +141,7 @@ class _PageStatistics extends State<PageStatistics> {
                                     MainAxisAlignment.spaceEvenly,
                                 children: <Widget>[
                               Text(
-                                "${covid.cases} ",
+                                "${covid!.cases} ",
                                 style: TextStyle(
                                     color: Colors.blue,
                                     fontSize: 23,
