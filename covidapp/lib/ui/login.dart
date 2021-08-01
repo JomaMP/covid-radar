@@ -14,7 +14,7 @@ class _LoginState extends State<Login> {
   TextEditingController pass = TextEditingController();
 
   Future login() async {
-    var url = "http://192.168.100.105/pruebas/login.php";
+    var url = "http://localhost/pruebas/login.php";
     var response = await http.post(url, body: {
       "email": user.text,
       "contrasena": pass.text,

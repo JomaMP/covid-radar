@@ -15,7 +15,7 @@ class _RegistroState extends State<Registro> {
   TextEditingController pass = TextEditingController();
 
   Future register() async {
-    var url = "http://192.168.100.105/pruebas/registro.php";
+    var url = "http://localhost/pruebas/registro.php";
     var response = await http.post(url, body: {
       "usuario": user.text,
       "telefono": celphone.text,

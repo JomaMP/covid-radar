@@ -59,7 +59,7 @@ class _IndiaState extends State<India> {
                                             snapshot.data[index]['loc'],
                                             style: TextStyle(
                                                 fontSize: 18,
-                                                color: Colors.white),
+                                                color: Colors.black),
                                           ),
                                         ]),
                                   )),
@@ -201,7 +201,7 @@ class _IndiaState extends State<India> {
                                                           ['loc'],
                                                       style: TextStyle(
                                                           fontSize: 18,
-                                                          color: Colors.white),
+                                                          color: Colors.black),
                                                     ),
                                                   ]),
                                             )),
